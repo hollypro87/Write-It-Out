@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoir</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <img
+          src="./assets/samplefamily.jpg"
+          class="image-fluid float-left border-dark rounded"
+          alt="responsive image"
+          style="max-width: 155px;"
+        />
+        <h1 class="text-center">Book Of Me.</h1>
+        <p class="text-center">Create your own, personal, memoir.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-3 order-1" id="sticky-sidebar">
+          <div class="sticky-top">
+            <button type="button" class="btn btn-block btn-outline-dark">
+              New Entry
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Recent Entry
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Timeline
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Journal
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Family
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Personal
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Career
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Photos
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Biography
+            </button>
+            <button type="button" class="btn btn-block btn-outline-dark">
+              Emergency Contacts
+            </button>
+          </div>
+        </div>
+        <div class="col-9 order-2" id="main">
+          <h2 class="text-center">Create Today's Journal Memory</h2>
+          <div class="container">
+            <div class="row py-3">
+              <div class="col" id="main">
+                <form>
+                  <div class="form-group">
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="journalEntryTitle"
+                      rows="1"
+                      placeholder="Journal Entry Title"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="journalEntryBody"
+                      rows="11"
+                      placeholder="What is on your mind today?"
+                    ></textarea>
+                  </div>
+                </form>
+                <button type="button" class="btn btn-block btn-outline-dark">
+                  Submit Journal Entry
+                </button>
+              </div>
+              <div class="col-3 order-2" id="sticky-sidebar">
+                <div class="sticky-top">
+                  <h5>Category Options</h5>
+                  <p>Date/Time w/moment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="moment.min.js"></script>
+  </body>
+</html>
