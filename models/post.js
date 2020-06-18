@@ -1,15 +1,23 @@
-"use strict";
-module.exports = (sequelize, DataTypes) => {
-  const Example = sequelize.define(
-    "Example",
-    {
-      text: DataTypes.STRING,
-      description: DataTypes.TEXT,
+module.exports = function (sequelize, DataTypes) {
+  var Post = sequelize.define("Post", {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
-    {}
-  );
-  Example.associate = function (_models) {
-    // associations can be defined here
-  };
-  return Example;
+    body: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    category: {
+      type: DataTypes.STRING,
+      defaultValue: "Personal"
+    }
+  });
+  return Post;
 };
