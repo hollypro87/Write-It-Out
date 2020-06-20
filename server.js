@@ -10,7 +10,7 @@ const morgan = require("morgan");
 const routes = require("./routes");
 const db = require("./models");
 const passport = require("./config/passport");
-const apiRoutes = require("./routes/apiRoutes");
+
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -21,7 +21,8 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(morgan("dev"));
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+
+//app.use(session({ secret: "", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -36,8 +37,8 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-app.use("./routes/htmlRoutes.js")(app);
-app.use("./routes/apiRoutes.js")(app);
+app.use(routes);
+
 
 const syncOptions = { force: false };
 
