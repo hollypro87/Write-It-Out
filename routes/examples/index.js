@@ -33,4 +33,28 @@ exampleRoutes
     res.json(dbExample);
   });
 
+//Search
+var search = "";
+app.get("/search", function (req, res) {
+  var results = [];
+  db.write_it_out
+    .find({})
+    .then(function (data) {
+      for (let i = 0; i < data.length; i++) {
+        var n = data[i].title.toLowerCase().includes(search.toLowerCase());
+        if (n) {
+          results.push(data[i]);
+        }
+      }
+      res.render("search", { searchData: results });
+    })
+    .catch(function (err) {
+      res.json(err);
+    });
+});
+
+app.post("/startSearch", function (req, res) {
+  search = req.body.search;
+});
+
 module.exports = exampleRoutes;
