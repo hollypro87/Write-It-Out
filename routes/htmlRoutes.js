@@ -26,7 +26,7 @@ htmlRoutes.get("/entry-form", async (req, res) => {
   res.render("entry-form");
 });
 
-// should load the reader page. 
+// should load the reader page.
 
 htmlRoutes.get("/reader", async (req, res) => {
   const options = {
@@ -38,6 +38,20 @@ htmlRoutes.get("/reader", async (req, res) => {
   const dbExample = await db.Example.findOne(options);
 
   res.render("reader");
+});
+
+// should render the log in page
+
+htmlRoutes.get("/login", async (req, res) => {
+  const options = {
+    where: {
+      id: req.params.id,
+    },
+  };
+
+  const dbExample = await db.Example.findOne(options);
+
+  res.render("login");
 });
 
 // Render 404 page for any unmatched routes
