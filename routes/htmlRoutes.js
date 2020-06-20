@@ -36,6 +36,20 @@ htmlRoutes.get("/reader", async (req, res) => {
   });
 });
 
+// should render the log in page
+
+htmlRoutes.get("/login", async (req, res) => {
+  const options = {
+    where: {
+      id: req.params.id,
+    },
+  };
+
+  const dbExample = await db.Example.findOne(options);
+
+  res.render("login");
+});
+
 // Render 404 page for any unmatched routes
 htmlRoutes.get("*", async (req, res) => {
   res.render("404");
