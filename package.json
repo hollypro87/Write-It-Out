@@ -34,7 +34,16 @@
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
+
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollypro87/Write-It-Out.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hollypro87/Write-It-Out/issues"
+  },
+  "homepage": "https://github.com/hollypro87/Write-It-Out#readme"
 }
