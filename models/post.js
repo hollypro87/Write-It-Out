@@ -16,18 +16,14 @@ module.exports = function (sequelize, DataTypes) {
     },
     category: {
       type: DataTypes.STRING,
-      defaultValue: "Personal"
-
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
   });
 
-  category.associate = function (models) {
-    // Associating Category with Posts
-    // When a category is deleted, also delete any associated Posts
-    category.belongsToMany(models.Post, {
 
-    });
-  };
 
   return Post;
 };
