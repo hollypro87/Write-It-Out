@@ -12,8 +12,9 @@ htmlRoutes.get("/", async (req, res) => {
   });
 });
 
-// Load example page and pass in an example by id
-htmlRoutes.get("/example/:id", async (req, res) => {
+// Load entry form  page and pass in an example by id
+
+htmlRoutes.get("/entry-form", async (req, res) => {
   const options = {
     where: {
       id: req.params.id,
@@ -22,9 +23,21 @@ htmlRoutes.get("/example/:id", async (req, res) => {
 
   const dbExample = await db.Example.findOne(options);
 
-  res.render("example", {
-    example: dbExample,
-  });
+  res.render("entry-form");
+});
+
+// should load the reader page. 
+
+htmlRoutes.get("/reader", async (req, res) => {
+  const options = {
+    where: {
+      id: req.params.id,
+    },
+  };
+
+  const dbExample = await db.Example.findOne(options);
+
+  res.render("reader");
 });
 
 // Render 404 page for any unmatched routes
