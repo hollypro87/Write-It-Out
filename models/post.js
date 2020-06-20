@@ -14,15 +14,20 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     },
-    created_at: {
-      type: 'TIMESTAMP',
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      allowNull: false
-    },
     category: {
       type: DataTypes.STRING,
       defaultValue: "Personal"
+
     },
   });
+
+  category.associate = function (models) {
+    // Associating Category with Posts
+    // When a category is deleted, also delete any associated Posts
+    category.belongsToMany(models.Post, {
+
+    });
+  };
+
   return Post;
 };
