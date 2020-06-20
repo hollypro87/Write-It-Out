@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const session = require("express-session");
+//const session = require("express-session");
 const Handlebars = require("handlebars");
 const exphbs = require("express-handlebars");
 const {
@@ -10,7 +10,7 @@ const morgan = require("morgan");
 const routes = require("./routes");
 const db = require("./models");
 const passport = require("./config/passport");
-const apiRoutes = require("./routes/api-routes");
+const apiRoutes = require("./routes/apiRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -37,7 +37,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 app.use("./routes/htmlRoutes.js")(app);
-app.use("./routes/api-routes.js")(app);
+app.use("./routes/apiRoutes.js")(app);
 
 const syncOptions = { force: false };
 

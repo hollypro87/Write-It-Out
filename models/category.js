@@ -8,8 +8,8 @@ module.exports = function (sequelize, DataTypes) {
     Category.associate = function (models) {
         // Associating Category with Posts
         // When a category is deleted, also delete any associated Posts
-        Category.belongsToMany(models.Post, {
-            onDelete: "cascade"
+        Category.hasMany(models.Post, {
+
         });
     };
 

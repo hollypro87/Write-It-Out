@@ -29,15 +29,11 @@ htmlRoutes.get("/entry-form", async (req, res) => {
 // should load the reader page.
 
 htmlRoutes.get("/reader", async (req, res) => {
-  const options = {
-    where: {
-      id: req.params.id,
-    },
-  };
+  const readerPost = await db.Post.findAll({});
 
-  const dbExample = await db.Example.findOne(options);
-
-  res.render("reader");
+  res.render("reader", {
+    posts: readerPost,
+  });
 });
 
 // should render the log in page
