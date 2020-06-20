@@ -26,18 +26,14 @@ htmlRoutes.get("/entry-form", async (req, res) => {
   res.render("entry-form");
 });
 
-// should load the reader page. 
+// should load the reader page.
 
 htmlRoutes.get("/reader", async (req, res) => {
-  const options = {
-    where: {
-      id: req.params.id,
-    },
-  };
+  const readerPost = await db.Post.findAll({});
 
-  const dbExample = await db.Example.findOne(options);
-
-  res.render("reader");
+  res.render("reader", {
+    posts: readerPost,
+  });
 });
 
 // Render 404 page for any unmatched routes
