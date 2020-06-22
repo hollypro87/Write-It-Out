@@ -6,7 +6,7 @@ const htmlRoutes = new Router();
 htmlRoutes.get("/", async (req, res) => {
   const homePost = await db.Post.findAll({});
 
-  res.render("index", {
+  res.render("./layouts/main", {
     msg: "Welcome!",
     examples: homePost,
   });
@@ -69,7 +69,7 @@ htmlRoutes.get("/search", function (req, res) {
     });
 });
 
-app.post("/startSearch", function (req, res) {
+htmlRoutes.post("/startSearch", function (req, res) {
   search = req.body.search;
 });
 
