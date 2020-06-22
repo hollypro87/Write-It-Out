@@ -45,8 +45,9 @@ htmlRoutes.get("/login", async (req, res) => {
     },
   };
 
-  const dbExample = await db.Example.findOne(options);
-
+  // const dbExample = await db.Example.findOne(options);
+  // Replaced db.example with db.Users and findOne with findAll
+  const login = await db.Users.findAll({});
   res.render("login");
 });
 
