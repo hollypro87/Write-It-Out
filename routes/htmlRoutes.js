@@ -54,7 +54,7 @@ htmlRoutes.get("/login", async (req, res) => {
 htmlRoutes.get("/search", function (req, res) {
   var search = req.body.search;
   let results = [];
-  db.Posts.findAll({})
+  db.Post.findAll({})
     .then(function (data) {
       for (let i = 0; i < data.length; i++) {
         var n = data[i].title.toLowerCase().includes(search.toLowerCase());
