@@ -45,16 +45,16 @@ htmlRoutes.get("/login", async (req, res) => {
     },
   };
 
-  const dbExample = await db.Example.findOne(options);
-
+  // const dbExample = await db.Example.findOne(options);
+  // Replaced db.example with db.Users and findOne with findAll
+  const login = await db.Users.findAll({});
   res.render("login");
 });
 
 htmlRoutes.get("/search", function (req, res) {
   var search = req.body.search;
   let results = [];
-  //verify the db table?
-  db.Post.findAll({})
+  db.Posts.findAll({})
     .then(function (data) {
       for (let i = 0; i < data.length; i++) {
         var n = data[i].title.toLowerCase().includes(search.toLowerCase());
