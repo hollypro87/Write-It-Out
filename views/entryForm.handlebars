@@ -7,92 +7,112 @@
     <div class="col-3 order-1" id="sticky-sidebar">
       <div class="sticky-top">
         <a href="/entry-form" id="entry">
-          <button type="button" class="btn btn-block btn-outline-dark">
-            New Entry
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Make A New Memory
           </button>
         </a>
         <a href="/reader" id="reader">
-          <button type="button" class="btn btn-block btn-outline-dark">
-            Reader
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Search Memories
           </button>
         </a>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Timeline
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Journal
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Family
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Personal
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Career
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Photos
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Biography
-        </button>
-        <button type="button" class="btn btn-block btn-outline-dark">
-          Emergency Contacts
-        </button>
+        <a>
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Family
+          </button>
+        </a>
+        <a>
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Personal
+          </button>
+        </a>
+        <a>
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Professional
+          </button>
+        </a>
+        <a>
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Photos
+          </button>
+        </a>
+        <a>
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Biography
+          </button>
+        </a>
+        <a>
+          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+            Emergency Contacts
+          </button>
+        </a>
       </div>
     </div>
-
 
 
     {{!-- journal entry area --}}
 
     <div class="col-9 order-2" id="form-entry">
       <form>
-        <h3 class="text-center">Create Today's Journal Memory</h3>
-        <h5 class="text-center" id="clock"></h5>
         <div class="container">
           <div class="row py-3">
             <div class="col" id="main">
-              <div class="form-group">
-                <textarea type="text" class="form-control" id="journalEntryTitle" rows="1"
-                  placeholder="Journal Entry Title"></textarea>
-              </div>
-              <div class="form-group">
-                <textarea type="text" class="form-control" id="journalEntryBody" rows="10"
-                  placeholder="What is on your mind today?"></textarea>
-              </div>
-              <button type="button" class="btn btn-block btn-outline-dark">
-                Submit Journal Entry
-              </button>
+              <h3 class="text-center">Create Today's Journal Memory</h4>
+                <h5 class="text-center" id="clock"></h5>
+                <div class="form-group">
+                  <textarea type="text" class="form-control" id="journalEntryTitle" rows="1"
+                    placeholder="Journal Entry Title"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea type="text" class="form-control" id="journalEntryBody" rows="9"
+                    placeholder="What is on your mind today?"></textarea>
+                </div>
+                <div class="d-flex justify-content-between form-group row">
+                  <a class="col-xs-3">
+                    <select class="btn btn-outline-dark dropdown-toggle" type="button" id="category">
+                      <option selected value="">All Categories</option>
+                      <option value="Personal">Personal</option>
+                      <option value="Product Review">Product Review</option>
+                      <option value="Political">Political</option>
+                    </select>
+                  </a>
+                  <a class="col-xs-3">
+                    <button type="button" class="btn btn-outline-dark">
+                      Save Memory
+                    </button>
+                  </a>
+                  <a class="col-xs-3">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="New Category" aria-label="New Category"
+                        aria-describedby="basic-addon2" />
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-outline-secondary" type="button">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
             </div>
             <div class="col-3 order-2" id="sticky-sidebar">
               <div class="sticky-top">
-                <p>Memory Tags</p>
+                <p>Memory Search</p>
               </div>
-              <div class="radio disabled">
-                <label><input type="radio" name="optradio" />Personal</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="optradio" checked />Family</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="optradio" />Professional</label>
-              </div>
-              <div class="radio disabled">
-                <label><input type="radio" name="optradio" />Aspirations</label>
-              </div>
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="New Label" aria-label="New Label"
-                  aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                  <button class="btn btn-sm btn-outline-secondary" type="button">
-                    Button
-                  </button>
+              <div class="searchArticles">
+                {{#each searchData}}
+                <div class="projCards portItem" id={{this._id}}>
+                  <h1><u>{{this.category}}</u></h1>
+                  <div class="cardText">
+                    <h5 class="projText">{{this.title}}</h5>
+                  </div>
                 </div>
+                {{/each}}
               </div>
             </div>
           </div>
         </div>
-      </form>
     </div>
+    </main>
+  </div>
+</div>
+</div>
