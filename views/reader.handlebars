@@ -61,6 +61,7 @@
       </div>
     </div>
 
+
     <!-- center section -->
 
     <div class="col-9 order-2" id="memory-display">
@@ -78,16 +79,14 @@
                             min-height: 278px;
                             width: 100%;
                           ">
-                      <p>
 
-                        {{!-- Not sure what way it should be --}}
-                        {{#each posts}}
+                      <p>
+                     {{#each posts}}
                         <h2> <a href="/blog/{{id}}">{{title}}</a> </h2>
                         <p>
                           {{content}}
                         </p>
                         {{/each}}
-
                       </p>
                     </div>
                   </div>

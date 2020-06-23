@@ -1,5 +1,9 @@
 require("dotenv").config();
 const express = require("express");
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
+const postRoutes = require("./routes/post-routes");
+
 //const session = require("express-session");
 const Handlebars = require("handlebars");
 const exphbs = require("express-handlebars");
@@ -7,7 +11,7 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const morgan = require("morgan");
-const routes = require("./routes");
+
 const db = require("./models");
 const passport = require("./config/passport");
 
@@ -37,7 +41,9 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-app.use(routes);
+app.use(apiRoutes);
+app.use(htmlRoutes);
+app.use(postRoutes);
 
 
 const syncOptions = { force: false };

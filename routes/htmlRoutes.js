@@ -4,11 +4,11 @@ const db = require("../models");
 const htmlRoutes = new Router();
 
 htmlRoutes.get("/", async (req, res) => {
-  const dbExamples = await db.Example.findAll({});
+  const homePost = await db.Post.findAll({});
 
-  res.render("index", {
+  res.render("./reader", {
     msg: "Welcome!",
-    examples: dbExamples,
+    examples: homePost,
   });
 });
 
@@ -21,9 +21,9 @@ htmlRoutes.get("/entry-form", async (req, res) => {
     },
   };
 
-  const dbExample = await db.Example.findOne(options);
+  const entryForm = await db.Post.findOne(options);
 
-  res.render("entry-form");
+  res.render("entryForm");
 });
 
 // should load the reader page.
@@ -45,9 +45,32 @@ htmlRoutes.get("/login", async (req, res) => {
     },
   };
 
-  const dbExample = await db.Example.findOne(options);
-
+  // const dbExample = await db.Example.findOne(options);
+  // Replaced db.example with db.Users and findOne with findAll
+  const login = await db.Users.findAll({});
   res.render("login");
+});
+
+htmlRoutes.get("/search", function (req, res) {
+  var search = req.body.search;
+  let results = [];
+  db.Post.findAll({})
+    .then(function (data) {
+      for (let i = 0; i < data.length; i++) {
+        var n = data[i].title.toLowerCase().includes(search.toLowerCase());
+        if (n) {
+          results.push(data[i]);
+        }
+      }
+      res.render("search", { searchData: results });
+    })
+    .catch(function (err) {
+      res.json(err);
+    });
+});
+
+htmlRoutes.post("/startSearch", function (req, res) {
+  search = req.body.search;
 });
 
 // Render 404 page for any unmatched routes
