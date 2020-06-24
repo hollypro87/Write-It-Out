@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes");
-const postRoutes = require("./routes/post-routes");
 
 //const session = require("express-session");
 const Handlebars = require("handlebars");
@@ -43,7 +42,6 @@ app.set("view engine", "handlebars");
 // Routes
 app.use(apiRoutes);
 app.use(htmlRoutes);
-app.use(postRoutes);
 
 const syncOptions = { force: false };
 
