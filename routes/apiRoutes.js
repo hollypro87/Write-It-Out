@@ -23,7 +23,7 @@ apiRoutes.get("/api/posts/:id", function (req, res) {
 
 apiRoutes.post("/api/posts", function (req, res) {
     console.log("hit post");
-    
+
     db.Post.create(req.body).then(function (dbPost) {
         res.json(dbPost);
     });
