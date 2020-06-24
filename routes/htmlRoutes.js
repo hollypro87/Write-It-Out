@@ -14,14 +14,14 @@ htmlRoutes.get("/", async (req, res) => {
 
 // Load entry form  page and pass in an example by id
 
-htmlRoutes.get("/entry-form", async (req, res) => {
-  const options = {
-    where: {
-      id: req.params.id,
-    },
-  };
+htmlRoutes.get("/entryForm", async (req, res) => {
+  // const options = {
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  // };
 
-  const entryForm = await db.Post.findOne(options);
+  // const entryForm = await db.Post.findOne(options);
 
   res.render("entryForm");
 });
