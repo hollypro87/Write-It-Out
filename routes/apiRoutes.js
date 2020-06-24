@@ -1,5 +1,6 @@
 const Router = require("express").Router;
 const db = require("../models");
+var passport = require("../config/passport");
 
 const apiRoutes = Router();
 //Post routes
@@ -66,7 +67,7 @@ apiRoutes.post("/api/user", function (req, res) {
     });
 });
 
-apiRoutes.delete("/api/posts/:id", function (req, res) {
+apiRoutes.delete("/api/user/:id", function (req, res) {
     db.User.destroy({
         where: {
             id: req.params.id
@@ -74,6 +75,10 @@ apiRoutes.delete("/api/posts/:id", function (req, res) {
     }).then(function (dbUser) {
         res.json(dbUser);
     });
+});
+
+apiRoutes.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user);
 });
 
 module.exports = apiRoutes;
