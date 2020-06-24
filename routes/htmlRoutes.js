@@ -38,16 +38,13 @@ htmlRoutes.get("/reader", async (req, res) => {
 
 // should render the log in page
 
-htmlRoutes.get("/login", async (req, res) => {
-  // const options = {
-  //   where: {
-  //     id: req.params.id,
-  //   },
-  // };
+// render sign up page
 
-  // const dbExample = await db.Example.findOne(options);
-  // Replaced db.example with db.Users and findOne with findAll
-  // const login = await db.Users.findAll({});
+htmlRoutes.get("/signup", async (req, res) => {
+  res.render("signup");
+});
+
+htmlRoutes.get("/login", async (req, res) => {
   res.render("login");
 });
 
