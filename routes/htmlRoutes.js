@@ -14,14 +14,14 @@ htmlRoutes.get("/", async (req, res) => {
 
 // Load entry form  page and pass in an example by id
 
-htmlRoutes.get("/entry-form", async (req, res) => {
-  const options = {
-    where: {
-      id: req.params.id,
-    },
-  };
+htmlRoutes.get("/entryForm", async (req, res) => {
+  // const options = {
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  // };
 
-  const entryForm = await db.Post.findOne(options);
+  // const entryForm = await db.Post.findOne(options);
 
   res.render("entryForm");
 });
@@ -39,15 +39,15 @@ htmlRoutes.get("/reader", async (req, res) => {
 // should render the log in page
 
 htmlRoutes.get("/login", async (req, res) => {
-  const options = {
-    where: {
-      id: req.params.id,
-    },
-  };
+  // const options = {
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  // };
 
   // const dbExample = await db.Example.findOne(options);
   // Replaced db.example with db.Users and findOne with findAll
-  const login = await db.Users.findAll({});
+  // const login = await db.Users.findAll({});
   res.render("login");
 });
 
