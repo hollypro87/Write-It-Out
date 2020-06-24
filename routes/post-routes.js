@@ -1,10 +1,8 @@
 var db = require("../models");
 
-// Routes
-// =============================================================
 module.exports = function (app) {
 
-    // GET route for getting all of the posts
+    // getting all of the posts
     app.get("/api/post", function (req, res) {
         var query = {};
         if (req.query.post_id) {
@@ -17,7 +15,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get route for retrieving a single post
+    // retrieving a single post
     app.get("/api/post/:id", function (req, res) {
         db.Post.findOne({
             where: {
@@ -29,14 +27,14 @@ module.exports = function (app) {
         });
     });
 
-    // POST route for saving a new post
+    // saving a new post
     app.post("/api/post", function (req, res) {
         db.Post.create(req.body).then(function (dbPost) {
             res.json(dbPost);
         });
     });
 
-    // DELETE route for deleting posts
+    // deleting posts
     app.delete("/api/post/:id", function (req, res) {
         db.Post.destroy({
             where: {
@@ -47,7 +45,7 @@ module.exports = function (app) {
         });
     });
 
-    // PUT route for updating posts
+    // updating posts
     app.put("/api/post", function (req, res) {
         db.Post.update(
             req.body,

@@ -45,7 +45,6 @@ app.use(apiRoutes);
 app.use(htmlRoutes);
 app.use(postRoutes);
 
-
 const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
