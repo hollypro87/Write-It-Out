@@ -8,13 +8,6 @@ function submitPost(post) {
   });
 }
 
-// Search Bar
-$(document).on("click", "#searchButton", function () {
-  var searchVar = $("#searchBar").val().trim();
-  $.post("/startSearch", { search: searchVar });
-  $("#searchBar").val("");
-});
-
 $(document).ready(function () {
   const moment = require("moment");
   const today = moment().format("MMMM Do YYYY, h:mm:ss a");
@@ -29,31 +22,36 @@ $(document).ready(function () {
   }
   displayTime();
 
-$(document).on("click", "#saveMemory", function () {
-  var id = $(this).data().id;
-  console.log("Hello");
-  var comment = $("#journalEntryBody").val().trim();
-  var title = $("#journalEntryTitle").val().trim();
-  var category = "test";
-  $.post("/api/posts/", { title: title, body: comment, category: category });
-});
+  $(document).on("click", "#saveMemory", function () {
+    var id = $(this).data().id;
+    console.log("Hello");
+    var comment = $("#journalEntryBody").val().trim();
+    var title = $("#journalEntryTitle").val().trim();
+    var category = "test";
+    $.post("/api/posts/", { title: title, body: comment, category: category });
+  });
 
-// Delete Memory
-$(document).on("click", ".#deleteMemory", function () {
-  var id = $(this).data().id;
-  $(this).parent().parent().remove();
-  $.get("/api/posts/").then(function (data) {});
-});
+  // Delete Memory
+  $(document).on("click", "#deleteMemory", function () {
+    var id = $(this).data().id;
+    $(this).parent().parent().remove();
+    $.get("/api/posts/").then(function (data) {});
+  });
 
-// Search
-$("#searchBar").keypress(function (key) {
-  if (key.keyCode == 13) {
-    event.preventDefault();
+  // Search Bar
+  $(document).on("click", "#searchButton", function () {
     var searchVar = $("#searchBar").val().trim();
     $.post("/startSearch", { search: searchVar });
-    s;
     $("#searchBar").val("");
-    window.location.replace("/search");
-  }
+  });
+
+  $("#searchBar").keypress(function (key) {
+    if (key.keyCode == 13) {
+      event.preventDefault();
+      var searchVar = $("#searchBar").val().trim();
+      $.post("/startSearch", { search: searchVar });
+      $("#searchBar").val("");
+      window.location.replace("/search");
+    }
+  });
 });
-// });
