@@ -1,5 +1,6 @@
 const Router = require("express").Router;
 const db = require("../models");
+var passport = require("../config/passport");
 
 const apiRoutes = Router();
 
@@ -38,5 +39,10 @@ apiRoutes.delete("/api/posts/:id", function (req, res) {
         res.json(dbPost);
     });
 });
+
+apiRoutes.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user);
+});
+
 
 module.exports = apiRoutes;
