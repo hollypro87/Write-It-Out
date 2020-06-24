@@ -70,12 +70,14 @@ htmlRoutes.get("/search", function (req, res) {
 });
 
 htmlRoutes.post("/startSearch", function (req, res) {
+  console.log("start");
+  
   search = req.body.search;
 });
 
 // Render 404 page for any unmatched routes
-htmlRoutes.get("*", async (req, res) => {
-  res.render("404");
-});
+// htmlRoutes.get("*", async (req, res) => {
+//   res.render("404");
+// });
 
 module.exports = htmlRoutes;
