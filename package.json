@@ -1,0 +1,50 @@
+{
+  "name": "Write-it-Out",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit",
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "config.json": "0.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "i": "^0.3.6",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "npm": "^6.14.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.13",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollypro87/Write-It-Out.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hollypro87/Write-It-Out/issues"
+  },
+  "homepage": "https://github.com/hollypro87/Write-It-Out#readme"
+}

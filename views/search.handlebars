@@ -1,0 +1,10 @@
+<div class="searchArticles">
+    {{#each searchData}}
+    <div class="projCards portItem" id={{this._id}}>
+        <h1><u>{{this.category}}</u></h1>
+        <div class="cardText">
+            <h5 class="projText">{{this.title}}</h5>
+        </div>
+    </div>
+    {{/each}}
+</div>
