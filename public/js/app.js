@@ -1,10 +1,5 @@
 //event listeners, click handlers
 // Save Journal Entry
-$(document).on("click", "#saveMemory", function () {
-  var id = $(this).data().id;
-  var comment = $("#journalEntryBody").val().trim();
-  $.post("/api/post/" + id, { body: comment });
-});
 
 // Submits a new post
 function submitPost(post) {
@@ -21,11 +16,21 @@ $(document).on("click", "#searchButton", function () {
 });
 
 $(document).ready(function () {
+  $(document).on("click", "#saveMemory", function () {
+    var id = $(this).data().id;
+    console.log("Hello");
+    var comment = $("#journalEntryBody").val().trim();
+    var title = $("#journalEntryTitle").val().trim();
+    var category = "test";
+    $.post("/api/posts/", { title: title, body: comment, category: category });
+  });
+  //Search
   $("#searchBar").keypress(function (key) {
     if (key.keyCode == 13) {
       event.preventDefault();
       var searchVar = $("#searchBar").val().trim();
       $.post("/startSearch", { search: searchVar });
+      s;
       $("#searchBar").val("");
       window.location.replace("/search");
     }
