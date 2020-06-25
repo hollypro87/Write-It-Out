@@ -32,16 +32,16 @@ node server.js
 
 ## Contributing
 
-Contributers include, James Van Slkye, Holly Prothe, William Trout and Nipa Dedhia. Please send an email if you wish to contribute.
+Contributers include, James Van Slyke, Holly Prothe, William Trout and Nipa Dedhia. Please send an email if you wish to contribute.
 
 ## Questions
 
-  <img src="https://avatars.githubusercontent.com/jakevs" style="width: 30px; height: 30px; border-radius:100%;">
+  <img src="https://avatars.githubusercontent.com/jakevs" style="width: 10px; height: 10px; border-radius:100%;">
 
-  <img src="https://ca.slack-edge.com/TUD7P4F1D-UUCRF1QSY-8c6105fdeb33-512" style="width: 30px; height: 30px; border-radius:100%;">
+  <img src="https://ca.slack-edge.com/TUD7P4F1D-UUCRF1QSY-8c6105fdeb33-512" style="width: 10px; height: 10px; border-radius:100%;">
 
- <img src="https://ca.slack-edge.com/TUD7P4F1D-UUUHTME7J-c72ce64bd0bd-512" style="width: 30px; height: 30px; border-radius:100%;">
+ <img src="https://files.slack.com/files-pri/TUD7P4F1D-F0160QK0RFD/image_from_ios.jpg" style="width: 10px; height: 10px; border-radius:100%;">
 
-  <img src="https://ca.slack-edge.com/TUD7P4F1D-UUEJGSTGU-07704af50f79-512" style="width: 30px; height: 30px; border-radius:100%;">
+  <img src="https://ca.slack-edge.com/TUD7P4F1D-UUEJGSTGU-07704af50f79-512" style="width: 10px; height: 10px; border-radius:100%;">
 
 If you have any questions about the repository, or an open issue, please contact any of the contributing members of this project.
