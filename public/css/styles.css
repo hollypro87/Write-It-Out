@@ -21,7 +21,7 @@
 
 /* login page */
 
-.login-container {
+/* .login-container {
   width: 300px;
   max-width: 100%;
   margin: 50px auto;
@@ -37,8 +37,22 @@
 }
 a {
   color: #fff;
+} */
+
+/* general */
+
+body {
+  background-color: #6c7a89;
 }
 
+#entryFormBody {
+  background-color: #a3c6c4;
+}
+
+#banner {
+  background-color: #354649;
+  color: white;
+}
 /* entry page  */
 
 /* reader page */
