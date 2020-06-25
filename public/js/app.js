@@ -33,10 +33,16 @@ $(document).ready(function () {
   });
 
   // Delete Memory
-  $(document).on("click", "#deleteMemory", function () {
+  $(document).on("click", ".deleteMemory", function () {
     var id = $(this).data().id;
+    console.log(id);
     $(this).parent().parent().remove();
-    $.delete("/api/posts/").then(function (data) { });
+    $.ajax({
+      type: "DELETE",
+      url: "/api/posts/" + id,
+
+    })
+      .then(function (data) { });
   });
 
   // Search Bar
