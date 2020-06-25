@@ -25,7 +25,7 @@
         </a>
         <a href="/reader" id="reader">
           <button type="button" class="btn btn-block btn-outline-dark mb-3">
-            Search Memories
+            Read Memories
           </button>
         </a>
         <a>
@@ -62,6 +62,8 @@
     </div>
 
 
+    {{!-- ??????? --}}
+
     <!-- center section -->
 
     <div class="col-9 order-2" id="memory-display">
@@ -69,70 +71,68 @@
         <div class="container">
           <div class="row py-3">
             <div class="col" id="main">
+
+              {{#each posts}}
               <div class="card" style="height: 400px;">
                 <div class="card-body">
-                  <h5 class="card-title" id="memory-title">Memory Title</h5>
-                  <div class="media-display">
-                    <div class="media-body" id="memory-body" rows="10" style="
+                  <h2> <a href="/blog/{{id}}">{{this.title}}</a> </h2>
+                  <div class="media-body overflow-auto" <div class="media-body" id="memory-body" rows="10" style="
                             height: 100%;
                             max-height: 278px;
                             min-height: 278px;
                             width: 100%;
                           ">
 
-                      <p>
-                     {{#each posts}}
-                        <h2> <a href="/blog/{{id}}">{{title}}</a> </h2>
-                        <p>
-                          {{body}}
-                        </p>
-                        {{/each}}
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                    <a href="/reader" id="reader">
-                      <button type="button" class="btn btn-outline-dark" id = "deleteMemory">
-                        Delete Memory
-                      </button>
-                    </a>
-                    <a href="/entryForm" id="entry">
-                      <button type="button" class="btn btn-outline-dark">
-                        Update Memory
-                      </button>
-                    </a>
-                    <a href="/entryForm" id="entry">
-                      <button type="button" class="btn btn-outline-dark">
-                        New Memory
-                      </button>
-                    </a>
+                    {{this.body}}
+
+                    </p>
+                    {{/each}}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- sidebar area far right -->
-
-
-            <div class="col-3 order-2" id="sticky-sidebar">
-              <div class="sticky-top">
-                <p>Memory Search</p>
-              </div>
-              <div class="searchArticles">
-                {{#each searchData}}
-                <div class="projCards portItem" id={{this._id}}>
-                  <h1><u>{{this.category}}</u></h1>
-                  <div class="cardText">
-                    <h5 class="projText">{{this.title}}</h5>
-                  </div>
+                <div class="d-flex justify-content-between">
+                  <a href="/reader" id="reader">
+                    <button type="button" class="btn btn-outline-dark" id="deleteMemory">
+                      Delete Memory
+                    </button>
+                  </a>
+                  <a href="/entryForm" id="entry">
+                    <button type="button" class="btn btn-outline-dark">
+                      Update Memory
+                    </button>
+                  </a>
+                  {{!-- <a href="/entryForm" id="entry">
+                    <button type="button" class="btn btn-outline-dark">
+                      New Memory
+                    </button>
+                  </a> --}}
                 </div>
-                {{/each}}
               </div>
             </div>
           </div>
+
+          <!-- sidebar area far right -->
+
+
+          {{!-- <div class="col-3 order-2" id="sticky-sidebar">
+            <div class="sticky-top">
+              <p>Memory Search</p>
+            </div>
+            <div class="searchArticles">
+              {{#each searchData}}
+              <div class="projCards portItem" id={{this._id}}>
+                <h1><u>{{this.category}}</u></h1>
+                <div class="cardText">
+                  <h5 class="projText">{{this.title}}</h5>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          </div> --}}
         </div>
     </div>
-    </main>
   </div>
+  </main>
+</div>
 </div>
 </div>
