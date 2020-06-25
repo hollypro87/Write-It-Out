@@ -4,7 +4,7 @@
 // Submits a new post
 function submitPost(post) {
   $.post("/api/posts", post, function () {
-    window.location.href = "/entry-form";
+    window.location.href = "/entryForm";
   });
 }
 
@@ -29,6 +29,7 @@ $(document).ready(function () {
     var title = $("#journalEntryTitle").val().trim();
     var category = "test";
     $.post("/api/posts/", { title: title, body: comment, category: category });
+    window.location.href = "/reader";
   });
 
   // Delete Memory

@@ -79,6 +79,8 @@ apiRoutes.delete("/api/user/:id", function (req, res) {
 
 apiRoutes.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
+    res.redirect(req.session.returnTo || '/reader');
+    delete req.session.returnTo;
 });
 
 module.exports = apiRoutes;
