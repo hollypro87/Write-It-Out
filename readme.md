@@ -40,7 +40,7 @@ Contributers include, James Van Slyke, Holly Prothe, William Trout and Nipa Dedh
 
   <img src="https://ca.slack-edge.com/TUD7P4F1D-UUCRF1QSY-8c6105fdeb33-512" style="width: 10px; height: 10px; border-radius:100%;">
 
- <img src="https://files.slack.com/files-pri/TUD7P4F1D-F0160QK0RFD/image_from_ios.jpg" style="width: 10px; height: 10px; border-radius:100%;">
+ <img src="https://ca.slack-edge.com/TUD7P4F1D-UUUHTME7J-c72ce64bd0bd-512" style="width: 10px; height: 10px; border-radius:100%;">
 
   <img src="https://ca.slack-edge.com/TUD7P4F1D-UUEJGSTGU-07704af50f79-512" style="width: 10px; height: 10px; border-radius:100%;">
 
