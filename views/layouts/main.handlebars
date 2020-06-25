@@ -8,27 +8,30 @@
     <title>Home Page</title>
 </head>
 
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <img src="./assets/img/bloglogo.png" class="image-fluid float-left border-dark rounded"
-                alt="responsive image" style="max-width: 155px;" />
-            <h1 class="text-center">Book Of Me.</h1>
-            <p class="text-center">Create your own, personal, memoir.</p>
+<div class="container">
+
+    <body>
+        <div class="container" style="background-color: #354649">
+            <div class="jumbotron" id="banner">
+               <img src="./assets/img/bloglogo.png" class="image-fluid float-left border-dark rounded"
+                    alt="responsive image" style="max-width: 155px;" />
+                <h1 class="text-center">Book Of Me</h1>
+                <p class="text-center">Create your own, personal, memoir.</p>
+            </div>
+
         </div>
-    </div>
 
-    {{!-- Navigation info moved to each lower level--}}
-
-
-    {{{body}}}
+        {{!-- Navigation info moved to each lower level--}}
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {{!-- <script defer src="script.js"></script> --}}
-    <script src="/js/moment.min.js"></script>
-    <script src="/js/app.js"></script>
+        {{{body}}}
 
-</body>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        {{!-- <script defer src="script.js"></script> --}}
+        <script src="/js/moment.min.js"></script>
+        <script src="/js/app.js"></script>
+
+    </body>
 
 </html>
