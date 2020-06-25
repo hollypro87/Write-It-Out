@@ -2,63 +2,63 @@
 
 {{!-- navigation side bar --}}
 
-<div class="container">
+<div class="container" id="entryFormBody">
   <div class="row py-3">
     <div class="col-3 order-1" id="sticky-sidebar">
       <div class="sticky-top">
         <a href="/entryForm" id="entry">
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Make A New Memory
           </button>
         </a>
         <a href="/reader" id="reader">
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
-            Search Memories
+          <button type="button" class="btn btn-block btn-dark mb-3">
+            Read Memories
           </button>
         </a>
         <a>
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Family
           </button>
         </a>
         <a>
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Personal
           </button>
         </a>
         <a>
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Professional
           </button>
         </a>
         <a>
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Photos
           </button>
         </a>
         <a>
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Biography
           </button>
         </a>
         <a>
-          <button type="button" class="btn btn-block btn-outline-dark mb-3">
+          <button type="button" class="btn btn-block btn-dark mb-3">
             Emergency Contacts
           </button>
         </a>
       </div>
     </div>
 
-
     {{!-- journal entry area --}}
 
-    <div class="col-9 order-2" id="form-entry">
+    <div class="col-9 order-2">
       <form>
         <div class="container">
           <div class="row py-3">
             <div class="col" id="main">
               <h3 class="text-center">Create Today's Journal Memory</h4>
                 <h5 class="text-center" id="clock"></h5>
+                <br>
                 <div class="form-group">
                   <textarea type="text" class="form-control" id="journalEntryTitle" rows="1"
                     placeholder="Journal Entry Title"></textarea>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="d-flex justify-content-between form-group row">
                   <a class="col-xs-3">
-                    <select class="btn btn-outline-dark dropdown-toggle" type="button" id="category">
+                    <select class="btn btn-secondary dropdown-toggle" type="button" id="category">
                       <option selected value="">All Categories</option>
                       <option value="Personal">Personal</option>
                       <option value="Family">Family</option>
@@ -78,7 +78,7 @@
                     </select>
                   </a>
                   <a class="col-xs-3">
-                    <button type="button" id = "saveMemory" class="btn btn-outline-dark">
+                    <button type="button" id="saveMemory" class="btn btn-secondary">
                       Save Memory
                     </button>
                   </a>
@@ -87,7 +87,7 @@
                       <input type="text" class="form-control" placeholder="New Category" aria-label="New Category"
                         aria-describedby="basic-addon2" />
                       <div class="input-group-append">
-                        <button class="btn btn-sm btn-outline-secondary" type="button">
+                        <button class="btn btn-sm btn-secondary" type="button">
                           Submit
                         </button>
                       </div>
@@ -96,7 +96,7 @@
                 </div>
 
             </div>
-            <div class="col-3 order-2" id="sticky-sidebar">
+            {{!-- <div class="col-3 order-2" id="sticky-sidebar">
               <div class="sticky-top">
                 <p>Memory Search</p>
               </div>
@@ -110,7 +110,7 @@
                 </div>
                 {{/each}}
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
     </div>

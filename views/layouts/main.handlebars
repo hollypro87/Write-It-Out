@@ -4,18 +4,21 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css" media="screen" >
+    <link rel="stylesheet" href="/css/styles.css" media="screen">
     <title>Home Page</title>
 </head>
 
+<div class="container">
+
     <body>
-        <div class="container">
-            <div class="jumbotron">
-                <img src="./assets/samplefamily.jpg" class="image-fluid float-left border-dark rounded"
+        <div class="container" style="background-color: #354649">
+            <div class="jumbotron" id="banner">
+               <img src="./assets/img/bloglogo.png" class="image-fluid float-left border-dark rounded"
                     alt="responsive image" style="max-width: 155px;" />
-                <h1 class="text-center">Book Of Me.</h1>
+                <h1 class="text-center">Book Of Me</h1>
                 <p class="text-center">Create your own, personal, memoir.</p>
             </div>
+
         </div>
 
         {{!-- Navigation info moved to each lower level--}}
@@ -26,8 +29,10 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         {{!-- <script defer src="script.js"></script> --}}
-        <script defer src="moment.min.js"></script> 
+        <script src="/js/moment.min.js"></script>
         <script src="/js/app.js"></script>
+        <script src="/js/script.js"></script>
 
     </body>
+
 </html>

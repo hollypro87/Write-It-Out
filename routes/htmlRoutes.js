@@ -6,7 +6,7 @@ const htmlRoutes = new Router();
 htmlRoutes.get("/", async (req, res) => {
   const homePost = await db.Post.findAll({});
 
-  res.render("./reader", {
+  res.render("./login", {
     msg: "Welcome!",
     examples: homePost,
   });
