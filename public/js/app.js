@@ -9,18 +9,18 @@ function submitPost(post) {
 }
 
 $(document).ready(function () {
-  const moment = require("moment");
-  const today = moment().format("MMMM Do YYYY, h:mm:ss a");
+  //   const moment = require("moment");
+  //   const today = moment().format("MMMM Do YYYY, h:mm:ss a");
 
-  const clock = document.querySelector("#clock");
+  //   const clock = document.querySelector("#clock");
 
-  function displayTime() {
-    var time = moment().format("MMMM Do YYYY, h:mm:ss a");
-    $("#clock").text(time);
-    console.log(time);
-    setTimeout(displayTime, 1000);
-  }
-  displayTime();
+  //   function displayTime() {
+  //     var time = moment().format("MMMM Do YYYY, h:mm:ss a");
+  //     $("#clock").text(time);
+  //     console.log(time);
+  //     setTimeout(displayTime, 1000);
+
+  //   displayTime();
 
   $(document).on("click", "#saveMemory", function () {
     var id = $(this).data().id;
@@ -35,7 +35,7 @@ $(document).ready(function () {
   $(document).on("click", "#deleteMemory", function () {
     var id = $(this).data().id;
     $(this).parent().parent().remove();
-    $.get("/api/posts/").then(function (data) {});
+    $.get("/api/posts/").then(function (data) { });
   });
 
   // Search Bar

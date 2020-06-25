@@ -2,7 +2,7 @@
 
 {{!-- navigation side bar --}}
 
-<div class="container rounded" id="entryFormBody">
+<div class="container" id="entryFormBody">
   <div class="row py-3">
     <div class="col-3 order-1" id="sticky-sidebar">
       <div class="sticky-top">
@@ -13,7 +13,7 @@
         </a>
         <a href="/reader" id="reader">
           <button type="button" class="btn btn-block btn-dark mb-3">
-            View All Memories
+            Read Memories
           </button>
         </a>
         <a>
@@ -51,13 +51,14 @@
 
     {{!-- journal entry area --}}
 
-    <div class="col-9 order-2" id="form-entry">
+    <div class="col-9 order-2">
       <form>
         <div class="container">
           <div class="row py-3">
             <div class="col" id="main">
               <h3 class="text-center">Create Today's Journal Memory</h4>
                 <h5 class="text-center" id="clock"></h5>
+                <br>
                 <div class="form-group">
                   <textarea type="text" class="form-control" id="journalEntryTitle" rows="1"
                     placeholder="Journal Entry Title"></textarea>
@@ -71,10 +72,15 @@
                     <select class="btn btn-secondary dropdown-toggle" type="button" id="category">
                       <option selected value="">All Categories</option>
                       <option value="Personal">Personal</option>
-                      <option value="Professional">Professional</option>
-                      <option value="Political">Political</option>
                       <option value="Family">Family</option>
+                      <option value="Political">Political</option>
+                      <option value="Professional">Professional</option>
                     </select>
+                  </a>
+                  <a class="col-xs-3">
+                    <button type="button" id="saveMemory" class="btn btn-secondary">
+                      Save Memory
+                    </button>
                   </a>
                   <a class="col-xs-3">
                     <div class="input-group">
@@ -87,32 +93,28 @@
                       </div>
                     </div>
                   </a>
-                  <a class="col-xs-3">
-                    <button type="button" class="btn btn-secondary">
-                      Save Memory
-                    </button>
-                  </a>
+                </div>
 
-                </div>
             </div>
-            <!-- <div class="col-3 order-2" id="sticky-sidebar">
-                  <div class="sticky-top">
-                    <p>Memory Search</p>
+            {{!-- <div class="col-3 order-2" id="sticky-sidebar">
+              <div class="sticky-top">
+                <p>Memory Search</p>
+              </div>
+              <div class="searchArticles">
+                {{#each searchData}}
+                <div class="projCards portItem" id={{this._id}}>
+                  <h1><u>{{this.category}}</u></h1>
+                  <div class="cardText">
+                    <h5 class="projText">{{this.title}}</h5>
                   </div>
-                  <div class="searchArticles">
-                    {{#each searchData}}
-                    <div class="projCards portItem" id={{this._id}}>
-                        <h1><u>{{this.category}}</u></h1>
-                        <div class="cardText">
-                            <h5 class="projText">{{this.title}}</h5>
-                        </div>
-                    </div>
-                    {{/each}}
                 </div>
-                  </div> -->
+                {{/each}}
+              </div>
+            </div> --}}
           </div>
         </div>
     </div>
+    </main>
   </div>
 </div>
 </div>
