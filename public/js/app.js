@@ -36,7 +36,7 @@ $(document).ready(function () {
   $(document).on("click", "#deleteMemory", function () {
     var id = $(this).data().id;
     $(this).parent().parent().remove();
-    $.get("/api/posts/").then(function (data) { });
+    $.delete("/api/posts/").then(function (data) { });
   });
 
   // Search Bar
